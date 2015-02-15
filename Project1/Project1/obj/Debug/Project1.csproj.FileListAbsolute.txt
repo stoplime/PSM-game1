@@ -1,0 +1,54 @@
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\app.info
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\shaders\Simple.cgx
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\shaders\Sprite.cgx
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\app.exe
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\System.Json.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\System.Xml.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\System.Runtime.Serialization.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\System.Core.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\System.ServiceModel.Web.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\System.ServiceModel.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\app.exe.mdb
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\app.info
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\shaders\Simple.cgx
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\shaders\Sprite.cgx
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\app.exe
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\System.Json.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\System.Xml.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\System.Runtime.Serialization.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\System.Core.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\System.ServiceModel.Web.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\System.ServiceModel.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\app.exe.mdb
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1.psdp
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\obj\Debug\shaders\shaders\Simple.cgx
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\obj\Debug\shaders\shaders\Sprite.cgx
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\obj\Debug\app.exe
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\obj\Debug\app.pdb
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\obj\Debug\Project1.csprojResolveAssemblyReference.cache
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\assets\flameThrower.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\assets\pistol.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\assets\playerSheet.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\assets\flameThrower.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\assets\pistol.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\assets\playerSheet.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\assets\swordSwingSheet.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\assets\sword.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\assets\swordSwingSheet.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\assets\sword.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\assets\SpiderSheet.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\assets\bulletSmall.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\assets\SpiderSheet.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\assets\bulletSmall.png
+F:\cse1302\Project1\Project1\obj\Debug\Project1.csprojResolveAssemblyReference.cache
+F:\cse1302\Project1\Project1\obj\Debug\shaders\shaders\Simple.cgx
+F:\cse1302\Project1\Project1\obj\Debug\shaders\shaders\Sprite.cgx
+F:\cse1302\Project1\Project1\obj\Debug\app.exe
+F:\cse1302\Project1\Project1\obj\Debug\app.pdb
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\assets\Turret.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-unsigned\Application\assets\Trooper.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\assets\Turret.png
+C:\Users\stoplime\Documents\PSM Playground 2\Project1\Project1\bin\Debug\Project1-signed\Application\assets\Trooper.png

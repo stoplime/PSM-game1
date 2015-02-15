@@ -1,0 +1,38 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Project1\Spider.cs">
+    <Files>
+      <File FileName="Project1\AppMain.cs" Line="60" Column="4" />
+      <File FileName="Project1\GameObject.cs" Line="20" Column="14" />
+      <File FileName="Project1\Player.cs" Line="89" Column="4" />
+      <File FileName="Project1\BaseEnemy.cs" Line="41" Column="25" />
+      <File FileName="Project1\Spider.cs" Line="45" Column="47" />
+      <File FileName="Project1\Weapon.cs" Line="5" Column="37" />
+      <File FileName="Project1\Sword.cs" Line="43" Column="4" />
+      <File FileName="Project1\Pistol.cs" Line="13" Column="3" />
+      <File FileName="Project1\FlameThrower.cs" Line="24" Column="58" />
+      <File FileName="Project1\BaseBullet.cs" Line="26" Column="21" />
+      <File FileName="Project1\SwordSwing.cs" Line="60" Column="38" />
+      <File FileName="Project1\Bullet.cs" Line="14" Column="4" />
+      <File FileName="Project1\Flame.cs" Line="23" Column="38" />
+      <File FileName="Project1\GameStats.cs" Line="52" Column="36" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Project1" expanded="True">
+            <Node name="assets" expanded="True" />
+            <Node name="Spider.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
