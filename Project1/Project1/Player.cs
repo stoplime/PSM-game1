@@ -11,7 +11,7 @@ namespace Project1
 	public class Player : GameObject
 	{
 		private static List<WeaponType> obtainedWeapon = GameStats.ObtainedWeapon;
-		private static List<long> ammo = GameStats.Ammo;
+		//private static List<long> ammo = GameStats.Ammo;
 		private static int hp = GameStats.Hp;
 		private float speed;
 		private Weapon selectedWeapon;
@@ -58,12 +58,11 @@ namespace Project1
 			sprite.Center = new Vector2(0.5f,0.5f);
 			sprite.Position = pos;
 			sprite.Rotation = GameStats.Angle;
-			sprite.SetTextureCoord(0,0,64,64);
 		}
 		
 		public override void GotHit ()
 		{
-			throw new NotImplementedException ();
+			//implement death
 		}
 		
 		public Weapon NewWeapon (WeaponType type)
@@ -78,7 +77,7 @@ namespace Project1
 			}
 		}
 		
-		public void Update(GamePadData gamePadData)
+		public override void Update(GamePadData gamePadData)
 		{
 			// Movement:
 			if ((gamePadData.Buttons & GamePadButtons.Circle) != 0) {
@@ -142,7 +141,7 @@ namespace Project1
 			}
 		}
 		
-		public void Render()
+		public override void Render()
 		{
 			if (moving) {
 				if (count % 10 == 0) {

@@ -56,6 +56,9 @@
     <Compile Include="FlameThrower.cs" />
     <Compile Include="Flame.cs" />
     <Compile Include="Spider.cs" />
+    <Compile Include="Spawner.cs" />
+    <Compile Include="Trooper.cs" />
+    <Compile Include="Turret.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -76,9 +79,10 @@
     <Content Include="assets\playerSheet.png" />
     <Content Include="assets\swordSwingSheet.png" />
     <Content Include="assets\sword.png" />
-    <Content Include="assets\SpiderSheet.png" />
     <Content Include="assets\bulletSmall.png" />
     <Content Include="assets\Turret.png" />
     <Content Include="assets\Trooper.png" />
+    <Content Include="assets\SpiderSheet.png" />
+    <Content Include="assets\floor.png" />
   </ItemGroup>
 </Project>

@@ -19,7 +19,6 @@ namespace Project1
 			sprite = new Sprite(graphics,GameStats.WeaponTexs[(int)WeaponType.Sword]);
 			sprite.Center = GameStats.SwordCenter;
 			
-			
 		}
 		
 		public override void Attack ()

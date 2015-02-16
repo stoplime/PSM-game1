@@ -18,6 +18,8 @@ namespace Project1
 		private static GraphicsContext graphics;
 		private static DeveloperDisplay hud;
 		private static Player player;
+		private static Spawner spawner;
+		private static Sprite bg;
 		
 		//**************************************************************
 		public static void Main (string[] args)
@@ -42,11 +44,13 @@ namespace Project1
 			hud = new DeveloperDisplay(graphics);
 			
 			//initialize textures:
+			Texture2D floorTex = new Texture2D("/Application/assets/floor.png",false);
+			
 			Texture2D playerTex = new Texture2D("/Application/assets/playerSheet.png",false);
 			
 			Texture2D spiderTex = new Texture2D("/Application/assets/SpiderSheet.png",false);
+			Texture2D trooperTex = new Texture2D("/Application/assets/Trooper.png",false);
 			Texture2D turretTex = new Texture2D("/Application/assets/Turret.png",false);
-			
 			
 			Texture2D swordTex = new Texture2D("/Application/assets/sword.png",false);
 			Texture2D pistolTex = new Texture2D("/Application/assets/pistol.png",false);
@@ -57,7 +61,9 @@ namespace Project1
 			Texture2D flameTex = new Texture2D("/Application/assets/bulletSmall.png",false);
 			
 			List<Texture2D> enemyTextures = new List<Texture2D>();
-			
+			enemyTextures.Add(spiderTex);
+			enemyTextures.Add(trooperTex);
+			enemyTextures.Add(turretTex);
 			
 			List<Texture2D> weaponTextures = new List<Texture2D>();
 			weaponTextures.Add(swordTex);
@@ -76,15 +82,16 @@ namespace Project1
 			
 			//objects
 			player = new Player(graphics,playerTex);
-			GameStats.Enemies = new List<GameObject>();
-			GameStats.Ebullets = new List<BaseBullet>();
+			GameStats.Players.Add(player);
+			Spider s = new Spider(graphics, new Vector3(graphics.Screen.Width/2,graphics.Screen.Height/2,0));
+			GameStats.Enemies.Add(s);
+			
+			bg = new Sprite(graphics,floorTex);
 			
 			//Vars:
-			GameStats.Players.Add(player);
-			for (int i = 0; i < 3; i++) {
-				GameStats.Ammo.Add(-1);
-			}
 			
+			
+			spawner = new Spawner(graphics);
 			
 		}
 		//**************************************************************
@@ -110,22 +117,18 @@ namespace Project1
 			}
 			
 			//update player
-			foreach(GameObject p in GameStats.Players)
-			{
-				if (p is Player) {
-					Player pl = (Player)p;
-					pl.Update(gamePadData);
-				}
-			}
+			GameStats.Players[0].Update(gamePadData);
 			//update enemies
+			
+			
 			foreach(GameObject e in GameStats.Enemies)
 			{
-				if (e is BaseEnemy) {
-					BaseEnemy en = (BaseEnemy)e;
-					en.Update();
-				}
+				e.Update();
 			}
+			
 			//update items
+			
+			spawner.Update();
 			
 			
 			
@@ -135,22 +138,17 @@ namespace Project1
 		public static void Render ()
 		{
 			// Clear the screen
-			graphics.SetClearColor (0.0f, 0.0f, 0.0f, 0.0f);
+			graphics.SetClearColor (0.0f, 0.3f, 0.3f, 0.0f);
 			graphics.Clear ();
 			// Draw Game
-			foreach(GameObject p in GameStats.Players)
-			{
-				if (p is Player) {
-					Player pl = (Player)p;
-					pl.Render();
-				}
-			}
+			bg.Render();
 			foreach(GameObject e in GameStats.Enemies)
 			{
-				if (e is BaseEnemy) {
-					BaseEnemy en = (BaseEnemy)e;
-					en.Render();
-				}
+				e.Render();
+			}
+			foreach(GameObject p in GameStats.Players)
+			{
+				p.Render();
 			}
 			foreach(BaseBullet b in GameStats.Pbullets)
 			{

@@ -3,6 +3,7 @@ using System;
 using Sce.PlayStation.Core;
 using Sce.PlayStation.Core.Environment;
 using Sce.PlayStation.Core.Graphics;
+using Sce.PlayStation.Core.Input;
 
 namespace Project1
 {
@@ -15,7 +16,7 @@ namespace Project1
 		{
 			get{
 				if (sprite != null) {
-					return sprite.Width;
+					return sprite.Width/2;
 				}
 				return 0;
 			}
@@ -33,6 +34,10 @@ namespace Project1
 		
 		public abstract void GotHit();
 		
+		public virtual void Update(){}
+		public virtual void Update(GamePadData gamePadData){}
+		
+		public abstract void Render();
 		
 	}
 }

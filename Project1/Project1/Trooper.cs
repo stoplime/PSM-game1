@@ -7,26 +7,24 @@ using Sce.PlayStation.Core.Graphics;
 
 namespace Project1
 {
-	public class Spider : BaseEnemy
+	public class Trooper : BaseEnemy
 	{
 		private Vector3 vel;
-		private int iter;
-		private int count;
-		private float speed;
+		private Sprite spriteHead;
 		
-		public Spider (GraphicsContext graphics, Vector3 pos)
+		public Trooper (GraphicsContext graphics, Vector3 pos)
 		{
-			sprite = new Sprite(graphics,GameStats.EnemyTexs[0],64,64);
+			sprite = new Sprite(graphics,GameStats.EnemyTexs[1],64,64);
 			sprite.Center = new Vector2(0.5f,0.5f);
 			sprite.Position = pos;
 			this.pos = pos;
+			spriteHead = new Sprite(graphics,GameStats.EnemyTexs[1],64,64);
+			spriteHead.Center = new Vector2(0.5f,0.5f);
+			spriteHead.Position = pos;
+			spriteHead.SetTextureCoord(64,0,128,64);
 			vel = Vector3.Zero;
-			iter = 0;
-			count = 0;
-			speed = 0;
 			
-			sprite.Rotation = GetAngle();
-			
+			spriteHead.Rotation = GetAngle();
 		}
 		
 		public void avoidNeighbors (List<GameObject> objectList)
@@ -48,7 +46,7 @@ namespace Project1
 				}
 			}
          	if(neighborCount > 0){
-                vel += avoidenceVector/100;
+                vel += avoidenceVector*2/(closest*closest*neighborCount);
 			}
 			
 		}
@@ -56,36 +54,34 @@ namespace Project1
 		public override void Update ()
 		{
 			GetPlayer();
-			vel = player.Pos.Subtract(this.pos)/200;
+			vel = player.Pos.Subtract(this.pos)/500;
 			
 			avoidNeighbors(GameStats.Enemies);
 			
+			if (vel.Length() > 2) {
+				vel.Normalize();
+				vel *= 2;
+			}
 			
-			speed = vel.Length();
+			if (player.Pos.Distance(this.pos) < 100) {
+				vel = Vector3.Zero;
+			}
+			vel.Z = 0;
 			
 			pos += vel;
 			sprite.Position = pos;
-			sprite.Rotation = GetAngle();
+			spriteHead.Position = pos;
+			spriteHead.Rotation = GetAngle();
 			
 			if (kill) {
 				GotHit();
 			}
-			count++;
 		}
 		
 		public override void Render ()
 		{
-			if (count*speed/5 > 1) {
-				if (iter < 3) {
-					iter++;
-				}else{
-					iter = 0;
-				}
-				count = 0;
-				sprite.SetTextureCoord(iter*sprite.Width,0,(iter+1)*sprite.Width,sprite.Height);
-			}
-			
 			base.Render ();
+			spriteHead.Render();
 		}
 	}
 }

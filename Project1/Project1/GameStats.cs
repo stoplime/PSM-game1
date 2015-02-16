@@ -9,11 +9,13 @@ namespace Project1
 {
 	public static class GameStats
 	{
-		public static List<GameObject> Enemies, Players = new List<GameObject>();
-		public static List<BaseBullet> Ebullets, Pbullets = new List<BaseBullet>();
+		public static List<GameObject> Enemies = new List<GameObject>();
+		public static List<GameObject> Players = new List<GameObject>();
+		public static List<BaseBullet> Ebullets = new List<BaseBullet>(); 
+		public static List<BaseBullet> Pbullets = new List<BaseBullet>();
 		
 		public static List<WeaponType> ObtainedWeapon = new List<WeaponType>();
-		public static List<long> Ammo = new List<long>();
+		//public static List<long> Ammo = new List<long>();
 		
 		public static List<Texture2D> EnemyTexs = new List<Texture2D>();
 		public static List<Texture2D> WeaponTexs = new List<Texture2D>();
@@ -28,6 +30,7 @@ namespace Project1
 		public const float BULLET_SPD = 5f;
 		public const float FLAME_SPD = 3.5f;
 		public const int RELOAD_SPD = 30;
+		public const int SPAWN_SPD = 600;
 		
 		public static Vector2 SwordCenter = new Vector2(-0.12f,0.32f);
 		public static Vector2 pistolCenter = new Vector2(0.23f,0.35f);

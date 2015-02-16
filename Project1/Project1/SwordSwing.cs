@@ -17,7 +17,6 @@ namespace Project1
 			:base(graphics,basePos,direction,alignPlayer)
 		{
 			sprite = new Sprite(graphics,GameStats.BulletTexs[(int)WeaponType.Sword],64,64);
-			sprite.SetTextureCoord(0,0,64,64);
 			sprite.Center = GameStats.SwordCenter;
 			sprite.Position = pos;
 			delay = 30;
@@ -28,14 +27,14 @@ namespace Project1
 		
 		private MoveDir GetDir(Vector3 basePos, Vector3 targetPos)
 		{
-			float ang = basePos.Angle(targetPos);
-			if (ang <= FMath.PI*3/4 && ang > FMath.PI/4) {
+			float ang = FMath.Atan2(targetPos.Y-basePos.Y,targetPos.X-basePos.X);
+			if (ang <= FMath.PI && ang > 0) {
 				return MoveDir.Right;
 			}
-			else if (ang <= FMath.PI/4 && ang > -FMath.PI/4) {
+			else if (ang <= FMath.PI/2 && ang > -FMath.PI/2) {
 				return MoveDir.Down;
 			}
-			else if (ang <= -FMath.PI/4 && ang > -FMath.PI*3/4) {
+			else if (ang <= 0 && ang > -FMath.PI) {
 				return MoveDir.Left;
 			}
 			else {

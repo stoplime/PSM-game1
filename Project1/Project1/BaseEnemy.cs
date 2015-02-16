@@ -9,7 +9,6 @@ namespace Project1
 {
 	public abstract class BaseEnemy : GameObject
 	{
-		protected float speed;
 		protected Player player;
 		protected int delay;
 		protected bool kill;
@@ -31,7 +30,7 @@ namespace Project1
 		
 		public bool GetPlayer ()
 		{
-			if (GameStats.Players[0] != null) {
+			if (GameStats.Players.Count != 0) {
 				Player closestP = (Player)GameStats.Players[0];
 				float closeDist = GameStats.Players[0].Pos.DistanceSquared(this.pos);
 				for (int i = 0; i < GameStats.Players.Count; i++) {
@@ -48,14 +47,25 @@ namespace Project1
 			}
 		}
 		
-		public float GetAngle ()
+		public override void GotHit ()
 		{
-			return player.Pos.Angle(this.pos);
+			for (int i = 0; i < GameStats.Enemies.Count; i++) {
+				if (GameStats.Enemies[i] == this) {
+					GameStats.Enemies.RemoveAt(i);
+					return;
+				}
+			}
 		}
 		
-		public abstract void Update();
+		public float GetAngle ()
+		{
+			if (player != null) {
+				return FMath.Atan2(player.Pos.Y-this.pos.Y,player.Pos.X-this.pos.X);
+			}
+			return 0f;
+		}
 		
-		public virtual void Render()
+		public override void Render()
 		{
 			
 			sprite.Render();

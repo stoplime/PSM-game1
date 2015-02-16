@@ -14,6 +14,7 @@ namespace Project1
 		public const int MAX_DELAY = 45;
 		public const float MAX_SPREAD = FMath.PI/4;
 		private Vector3 vel;
+		private float turretAngle;
 		
 		public Flame (GraphicsContext graphics, Vector3 basePos, MoveDir direction, bool alignPlayer) : base(graphics,basePos,direction,alignPlayer)
 		{
@@ -24,13 +25,34 @@ namespace Project1
 			delay = MAX_DELAY;
 			rand = new Random();
 			
-			float angle = ((((float)rand.NextDouble())-(0.5f*(float)rand.NextDouble()))*MAX_SPREAD)+GameStats.Angle;
-			
+			float angle = (((float)rand.NextDouble())-(0.5f*(float)rand.NextDouble()))*MAX_SPREAD;
+			if (alignPlayer) {
+				angle += GameStats.Angle;
+			}else{
+				
+			}
 			vel = new Vector3(FMath.Cos(angle),FMath.Sin(angle),0)*(GameStats.FLAME_SPD/2*((float)rand.NextDouble()+1f));
 		}
 		
 		public override void Update ()
 		{
+			List<GameObject> targets;
+			if (alignPlayer) {
+				targets = GameStats.Enemies;
+			}else{
+				targets = GameStats.Players;
+			}
+			
+			for (int i = 0; i < targets.Count; i++) {
+				float r = targets[i].GetRadius+4;
+				if (pos.DistanceSquared(targets[i].Pos) <= r*r) {
+					//target hits
+					targets[i].GotHit();
+					this.kill = true;
+					break;
+				}
+			}
+			
 			pos += vel;
 			vel *= 0.99f;
 			

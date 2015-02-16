@@ -88,6 +88,7 @@ namespace Project1
 			
 			vertexBuffer = new VertexBuffer(4, indexSize, VertexFormat.Float3, 
 			                                VertexFormat.Float2, VertexFormat.Float4);
+			SetTextureCoord(0,0,width,height);
 		}
 		
 		public Sprite(GraphicsContext graphics, Texture2D texture):this(graphics,texture,texture.Width,texture.Height){}

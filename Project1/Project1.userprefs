@@ -1,28 +1,36 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Project1\Spider.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Project1\Turret.cs">
     <Files>
-      <File FileName="Project1\AppMain.cs" Line="60" Column="4" />
-      <File FileName="Project1\GameObject.cs" Line="20" Column="14" />
-      <File FileName="Project1\Player.cs" Line="89" Column="4" />
-      <File FileName="Project1\BaseEnemy.cs" Line="41" Column="25" />
-      <File FileName="Project1\Spider.cs" Line="45" Column="47" />
-      <File FileName="Project1\Weapon.cs" Line="5" Column="37" />
-      <File FileName="Project1\Sword.cs" Line="43" Column="4" />
-      <File FileName="Project1\Pistol.cs" Line="13" Column="3" />
-      <File FileName="Project1\FlameThrower.cs" Line="24" Column="58" />
+      <File FileName="Project1\AppMain.cs" Line="144" Column="16" />
+      <File FileName="Project1\Spawner.cs" Line="57" Column="47" />
+      <File FileName="Project1\GameObject.cs" Line="19" Column="27" />
+      <File FileName="Project1\Player.cs" Line="65" Column="21" />
+      <File FileName="Project1\BaseEnemy.cs" Line="45" Column="10" />
+      <File FileName="Project1\Spider.cs" Line="64" Column="25" />
+      <File FileName="Project1\Trooper.cs" Line="20" Column="19" />
+      <File FileName="Project1\Turret.cs" Line="31" Column="16" />
+      <File FileName="Project1\GameStats.cs" Line="18" Column="5" />
+      <File FileName="Project1\Flame.cs" Line="32" Column="5" />
       <File FileName="Project1\BaseBullet.cs" Line="26" Column="21" />
-      <File FileName="Project1\SwordSwing.cs" Line="60" Column="38" />
-      <File FileName="Project1\Bullet.cs" Line="14" Column="4" />
-      <File FileName="Project1\Flame.cs" Line="23" Column="38" />
-      <File FileName="Project1\GameStats.cs" Line="52" Column="36" />
+      <File FileName="Project1\Bullet.cs" Line="41" Column="5" />
+      <File FileName="Project1\DeveloperDisplay.cs" Line="1" Column="1" />
+      <File FileName="Project1\FlameThrower.cs" Line="24" Column="58" />
+      <File FileName="Project1\MoveDir.cs" Line="1" Column="1" />
+      <File FileName="Project1\Pistol.cs" Line="13" Column="3" />
+      <File FileName="Project1\Sprite.cs" Line="79" Column="25" />
+      <File FileName="Project1\Sword.cs" Line="20" Column="42" />
+      <File FileName="Project1\SwordSwing.cs" Line="37" Column="40" />
+      <File FileName="Project1\Text.cs" Line="1" Column="1" />
+      <File FileName="Project1\Weapon.cs" Line="5" Column="37" />
+      <File FileName="Project1\WeaponType.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Project1" expanded="True">
             <Node name="assets" expanded="True" />
-            <Node name="Spider.cs" selected="True" />
+            <Node name="Turret.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -34,5 +42,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Project1\Turret.cs" line="31" offsetX="421" offsetY="510" expression="GetAngle" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>
