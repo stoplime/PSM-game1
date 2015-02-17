@@ -1,3 +1,4 @@
+//******************************** Steffen Lim *******************************
 using System;
 using System.Collections.Generic;
 
@@ -13,13 +14,14 @@ namespace Project1
 		protected int delay;
 		protected bool kill;
 		
+		
 		public bool Kill
 		{
 			get{return kill;}
 			set{kill = value;}
 		}
 		
-		public BaseEnemy ()
+		public BaseEnemy (GraphicsContext graphics): base(graphics)
 		{
 			if (!GetPlayer()) {
 				kill = true;
@@ -46,14 +48,21 @@ namespace Project1
 				return false;
 			}
 		}
-		
-		public override void GotHit ()
+		public void Died ()
 		{
 			for (int i = 0; i < GameStats.Enemies.Count; i++) {
 				if (GameStats.Enemies[i] == this) {
 					GameStats.Enemies.RemoveAt(i);
 					return;
 				}
+			}
+		}
+		
+		public override void GotHit (WeaponType wType)
+		{
+			base.GotHit(wType);
+			if (hp <= 0) {
+				Died();
 			}
 		}
 		
@@ -67,8 +76,7 @@ namespace Project1
 		
 		public override void Render()
 		{
-			
-			sprite.Render();
+			base.Render();
 		}
 		
 	}

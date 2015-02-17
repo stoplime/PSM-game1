@@ -103,3 +103,5 @@ C:\Users\stoplime\Documents\GitHub\PSM-game1\Project1\Project1\obj\Debug\app.exe
 C:\Users\stoplime\Documents\GitHub\PSM-game1\Project1\Project1\obj\Debug\app.pdb
 C:\Users\stoplime\Documents\GitHub\PSM-game1\Project1\Project1\bin\Debug\Project1-unsigned\Application\assets\floor.png
 C:\Users\stoplime\Documents\GitHub\PSM-game1\Project1\Project1\bin\Debug\Project1-signed\Application\assets\floor.png
+C:\Users\stoplime\Documents\GitHub\PSM-game1\Project1\Project1\bin\Debug\Project1-unsigned\Application\assets\White.png
+C:\Users\stoplime\Documents\GitHub\PSM-game1\Project1\Project1\bin\Debug\Project1-signed\Application\assets\White.png

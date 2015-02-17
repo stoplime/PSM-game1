@@ -1,3 +1,4 @@
+//******************************** Steffen Lim *******************************
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,6 +19,7 @@ namespace Project1
 		private long startTime, stopTime, timeDelta;
 		private long elapseTime;
 		private Text FPS;
+		private Text debug;
 		private int frameCount;
 		
 		public long TimeDelta
@@ -49,7 +51,9 @@ namespace Project1
 		public DeveloperDisplay (GraphicsContext graphics)
 		{
 			this.graphics = graphics;
+			debug = new Text(10,60,200,-1,-1,-1,"debug");
 			FPS = new Text(10,10,200,-1,-1,-1,"FPS: ??");
+			
 			
 			if(clock == null){
 				clock = new Stopwatch();
@@ -71,14 +75,16 @@ namespace Project1
 			}
 		}
 		
-		public void Update()
+		public void Update(string debugString)
 		{
-			UpdateFPS();
+			debug.Update(debugString);
+			
 		}
 		
 		public void Render()
 		{
-			UISystem.Render();
+			FPS.Render();
+			debug.Render();
 			frameCount++;
 		}
 	}

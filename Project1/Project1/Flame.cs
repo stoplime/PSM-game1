@@ -1,3 +1,4 @@
+//******************************** Steffen Lim *******************************
 using System;
 using System.Collections.Generic;
 
@@ -14,9 +15,8 @@ namespace Project1
 		public const int MAX_DELAY = 45;
 		public const float MAX_SPREAD = FMath.PI/4;
 		private Vector3 vel;
-		private float turretAngle;
 		
-		public Flame (GraphicsContext graphics, Vector3 basePos, MoveDir direction, bool alignPlayer) : base(graphics,basePos,direction,alignPlayer)
+		public Flame (GraphicsContext graphics, Vector3 basePos, MoveDir direction, bool alignPlayer, float orAangle) : base(graphics,basePos,direction,alignPlayer)
 		{
 			sprite = new Sprite(graphics,GameStats.BulletTexs[(int)WeaponType.FlameThrower]);
 			sprite.Center = new Vector2(0.5f,0.5f);
@@ -29,10 +29,13 @@ namespace Project1
 			if (alignPlayer) {
 				angle += GameStats.Angle;
 			}else{
-				
+				angle += orAangle;
+				sprite.Rotation = orAangle;
 			}
 			vel = new Vector3(FMath.Cos(angle),FMath.Sin(angle),0)*(GameStats.FLAME_SPD/2*((float)rand.NextDouble()+1f));
 		}
+		
+		public Flame (GraphicsContext graphics, Vector3 basePos, MoveDir direction, bool alignPlayer) : this (graphics,basePos,direction,alignPlayer,0){}
 		
 		public override void Update ()
 		{
@@ -47,7 +50,7 @@ namespace Project1
 				float r = targets[i].GetRadius+4;
 				if (pos.DistanceSquared(targets[i].Pos) <= r*r) {
 					//target hits
-					targets[i].GotHit();
+					targets[i].GotHit(WeaponType.FlameThrower);
 					this.kill = true;
 					break;
 				}

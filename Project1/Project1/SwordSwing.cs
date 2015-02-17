@@ -1,3 +1,4 @@
+//******************************** Steffen Lim *******************************
 using System;
 using System.Collections.Generic;
 
@@ -28,17 +29,17 @@ namespace Project1
 		private MoveDir GetDir(Vector3 basePos, Vector3 targetPos)
 		{
 			float ang = FMath.Atan2(targetPos.Y-basePos.Y,targetPos.X-basePos.X);
-			if (ang <= FMath.PI && ang > 0) {
+			if (ang <= -FMath.PI/4 && ang > -FMath.PI*3/4) {
+				return MoveDir.Up;
+			}
+			else if (ang <= FMath.PI/4 && ang > -FMath.PI/4) {
 				return MoveDir.Right;
 			}
-			else if (ang <= FMath.PI/2 && ang > -FMath.PI/2) {
+			else if (ang <= FMath.PI*3/4 && ang > FMath.PI/4) {
 				return MoveDir.Down;
 			}
-			else if (ang <= 0 && ang > -FMath.PI) {
-				return MoveDir.Left;
-			}
 			else {
-				return MoveDir.Up;
+				return MoveDir.Left;
 			}
 		}
 		
@@ -61,7 +62,7 @@ namespace Project1
 					float distSq = Vector3.DistanceSquared(basePos,targets[i].Pos);			//distance
 					if (distSq <= rch) {													//check distance
 						if (direction == GetDir(basePos,targets[i].Pos)) {					//check angle
-							targets[i].GotHit();											//iniciate damage
+							targets[i].GotHit(WeaponType.Sword);											//iniciate damage
 						}
 					}
 				}

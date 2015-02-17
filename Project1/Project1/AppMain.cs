@@ -60,6 +60,9 @@ namespace Project1
 			Texture2D pistolBulletTex = new Texture2D("/Application/assets/bulletSmall.png",false);
 			Texture2D flameTex = new Texture2D("/Application/assets/bulletSmall.png",false);
 			
+			Texture2D pixel = new Texture2D("/Application/assets/White.png",false);
+			GameStats.pixel = pixel;
+			
 			List<Texture2D> enemyTextures = new List<Texture2D>();
 			enemyTextures.Add(spiderTex);
 			enemyTextures.Add(trooperTex);
@@ -101,6 +104,9 @@ namespace Project1
 			var gamePadData = GamePad.GetData (0);
 			// update system : UI, Music, GameState
 			hud.UpdateFPS();
+			if(GameStats.Enemies.Count > 0){
+				hud.Update(GameStats.Enemies.Count.ToString());
+			}
 			
 			//update lists
 			for (int i = 0; i < GameStats.Pbullets.Count; i++) {

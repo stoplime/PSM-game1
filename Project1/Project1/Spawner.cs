@@ -1,3 +1,4 @@
+//******************************** Steffen Lim *******************************
 using System;
 using System.Collections.Generic;
 
@@ -9,8 +10,8 @@ namespace Project1
 {
 	public class Spawner
 	{
-		public const int spawnTimeRange = 300;
-		public const int spawnDomain = 100;		//spawns outside a radius of 100 from players
+		public const int spawnTimeRange = 300;	//300
+		public const int spawnDomain = 300;		//spawns outside a radius of 100 from players
 		private const int spawnDomainSQ = spawnDomain*spawnDomain;
 		private static Random rand;
 		private int spawnTime;

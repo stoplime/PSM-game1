@@ -84,5 +84,6 @@
     <Content Include="assets\Trooper.png" />
     <Content Include="assets\SpiderSheet.png" />
     <Content Include="assets\floor.png" />
+    <Content Include="assets\White.png" />
   </ItemGroup>
 </Project>

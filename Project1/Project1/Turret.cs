@@ -1,3 +1,4 @@
+//******************************** Steffen Lim *******************************
 using System;
 using System.Collections.Generic;
 
@@ -12,8 +13,11 @@ namespace Project1
 		private Sprite spriteHead;
 		private FlameThrower fire;
 		
-		public Turret (GraphicsContext graphics, Vector3 pos)
+		public const int hpMax = 100;
+		
+		public Turret (GraphicsContext graphics, Vector3 pos):base(graphics)
 		{
+			hp = hpMax;
 			this.pos = pos;
 			sprite = new Sprite(graphics,GameStats.EnemyTexs[2],64,64);
 			sprite.Center = new Vector2(0.5f,0.5f);
@@ -24,6 +28,9 @@ namespace Project1
 			spriteHead.SetTextureCoord(64,0,128,64);
 			
 			spriteHead.Rotation = GetAngle();
+			
+			fire = new FlameThrower(graphics,false);
+			fire.Pos = pos;
 		}
 		
 		public override void Update ()
@@ -32,8 +39,15 @@ namespace Project1
 			
 			spriteHead.Rotation = GetAngle();
 			
+			HpDisp(hpMax,pos,64,5,30);
+			
+			if (player.Pos.Distance(pos)<150) {
+				fire.Angle = GetAngle();
+				fire.Attack();
+			}
+			fire.Update(pos);
 			if (kill) {
-				GotHit();
+				Died();
 			}
 			
 		}
@@ -42,6 +56,7 @@ namespace Project1
 		{
 			sprite.Render ();
 			spriteHead.Render();
+			base.Render();
 		}
 	}
 }

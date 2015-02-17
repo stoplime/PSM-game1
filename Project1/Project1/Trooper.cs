@@ -1,3 +1,4 @@
+//******************************** Steffen Lim *******************************
 using System;
 using System.Collections.Generic;
 
@@ -11,9 +12,13 @@ namespace Project1
 	{
 		private Vector3 vel;
 		private Sprite spriteHead;
+		private Pistol pistol;
 		
-		public Trooper (GraphicsContext graphics, Vector3 pos)
+		public const int hpMax = 20;
+		
+		public Trooper (GraphicsContext graphics, Vector3 pos):base(graphics)
 		{
+			hp = hpMax;
 			sprite = new Sprite(graphics,GameStats.EnemyTexs[1],64,64);
 			sprite.Center = new Vector2(0.5f,0.5f);
 			sprite.Position = pos;
@@ -25,6 +30,7 @@ namespace Project1
 			vel = Vector3.Zero;
 			
 			spriteHead.Rotation = GetAngle();
+			pistol = new Pistol(graphics,false);
 		}
 		
 		public void avoidNeighbors (List<GameObject> objectList)
@@ -58,15 +64,17 @@ namespace Project1
 			
 			avoidNeighbors(GameStats.Enemies);
 			
-			if (vel.Length() > 2) {
-				vel.Normalize();
-				vel *= 2;
+			float distance = player.Pos.Distance(this.pos);
+			if (distance < 150) {
+				pistol.Attack();
 			}
-			
-			if (player.Pos.Distance(this.pos) < 100) {
+			pistol.Angle = GetAngle();
+			pistol.Update(pos);
+			if (distance < 100) {
 				vel = Vector3.Zero;
 			}
-			vel.Z = 0;
+			
+			HpDisp(hpMax,pos,64,5,40);
 			
 			pos += vel;
 			sprite.Position = pos;
@@ -74,14 +82,15 @@ namespace Project1
 			spriteHead.Rotation = GetAngle();
 			
 			if (kill) {
-				GotHit();
+				Died();
 			}
 		}
 		
 		public override void Render ()
 		{
-			base.Render ();
+			sprite.Render();
 			spriteHead.Render();
+			base.Render ();
 		}
 	}
 }

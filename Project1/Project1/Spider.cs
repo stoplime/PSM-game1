@@ -1,3 +1,4 @@
+//******************************** Steffen Lim *******************************
 using System;
 using System.Collections.Generic;
 
@@ -13,9 +14,14 @@ namespace Project1
 		private int iter;
 		private int count;
 		private float speed;
+		private int biteDelay;
 		
-		public Spider (GraphicsContext graphics, Vector3 pos)
+		public const int biteDelayMAX = 60;
+		public const int hpMax = 50;
+		
+		public Spider (GraphicsContext graphics, Vector3 pos):base(graphics)
 		{
+			hp = hpMax;
 			sprite = new Sprite(graphics,GameStats.EnemyTexs[0],64,64);
 			sprite.Center = new Vector2(0.5f,0.5f);
 			sprite.Position = pos;
@@ -24,6 +30,7 @@ namespace Project1
 			iter = 0;
 			count = 0;
 			speed = 0;
+			biteDelay = 0;
 			
 			sprite.Rotation = GetAngle();
 			
@@ -60,17 +67,26 @@ namespace Project1
 			
 			avoidNeighbors(GameStats.Enemies);
 			
+			if (pos.Distance(player.Pos) < 30) {
+				if (biteDelay >= biteDelayMAX) {
+					player.GotHit(WeaponType.Sword);
+					biteDelay = 0;
+				}
+			}
 			
 			speed = vel.Length();
+			
+			HpDisp(hpMax,pos,64,5,35);
 			
 			pos += vel;
 			sprite.Position = pos;
 			sprite.Rotation = GetAngle();
 			
 			if (kill) {
-				GotHit();
+				Died();
 			}
 			count++;
+			biteDelay++;
 		}
 		
 		public override void Render ()
@@ -84,7 +100,7 @@ namespace Project1
 				count = 0;
 				sprite.SetTextureCoord(iter*sprite.Width,0,(iter+1)*sprite.Width,sprite.Height);
 			}
-			
+			sprite.Render();
 			base.Render ();
 		}
 	}

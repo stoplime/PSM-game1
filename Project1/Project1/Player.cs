@@ -1,3 +1,4 @@
+//******************************** Steffen Lim *******************************
 using System;
 using System.Collections.Generic;
 
@@ -12,7 +13,7 @@ namespace Project1
 	{
 		private static List<WeaponType> obtainedWeapon = GameStats.ObtainedWeapon;
 		//private static List<long> ammo = GameStats.Ammo;
-		private static int hp = GameStats.Hp;
+		private bool died;
 		private float speed;
 		private Weapon selectedWeapon;
 		private GraphicsContext graphics;
@@ -29,15 +30,20 @@ namespace Project1
 //			get{return pos;}
 //			set{pos = value;}
 //		}
-		
-		public Player (GraphicsContext graphics, Texture2D spriteSheet)
+		public bool Died
+		{
+			get{return died;}
+			set{died = value;}
+		}
+		public Player (GraphicsContext graphics, Texture2D spriteSheet):base(graphics)
 		{
 			this.graphics = graphics;
 			sprite = new Sprite(graphics, spriteSheet, 64, 64);
-			hp = 5;
+			hp = GameStats.Hp;
 			pos = new Vector3(graphics.Screen.Width/4,graphics.Screen.Height/2,0);
 			speed = MIN_SPD;
 			moving = false;
+			died = false;
 			iter = 0;
 			count = 0;
 			
@@ -60,9 +66,12 @@ namespace Project1
 			sprite.Rotation = GameStats.Angle;
 		}
 		
-		public override void GotHit ()
+		public override void GotHit (WeaponType wType)
 		{
-			//implement death
+			base.GotHit(wType);
+			if (hp <= 0) {
+				//Game Over
+			}
 		}
 		
 		public Weapon NewWeapon (WeaponType type)
@@ -86,20 +95,31 @@ namespace Project1
 				speed = MIN_SPD;
 			}
 			
+			float width = sprite.Width;
+			float height = sprite.Height;
+			
 			if ((gamePadData.Buttons & GamePadButtons.Up) != 0) {
-				pos.Y-=speed;
+				if(pos.Y > height/2){
+					pos.Y-=speed;
+				}
 				GameStats.Direction = MoveDir.Up;
 			}
 			if ((gamePadData.Buttons & GamePadButtons.Down) != 0) {
-				pos.Y+=speed;
+				if(pos.Y < graphics.Screen.Height-height/2){
+					pos.Y+=speed;
+				}
 				GameStats.Direction = MoveDir.Down;
 			}
 			if ((gamePadData.Buttons & GamePadButtons.Left) != 0) {
+				if(pos.X > width/2){
 				pos.X-=speed;
+				}
 				GameStats.Direction = MoveDir.Left;
 			}
 			if ((gamePadData.Buttons & GamePadButtons.Right) != 0) {
+				if(pos.X < graphics.Screen.Width-width/2){
 				pos.X+=speed;
+				}
 				GameStats.Direction = MoveDir.Right;
 			}
 			if ((gamePadData.Buttons & (GamePadButtons.Up | GamePadButtons.Down | GamePadButtons.Left | GamePadButtons.Right)) != 0) {
@@ -132,6 +152,9 @@ namespace Project1
 				selectedWeapon.Attack();
 			}
 			
+			//HP
+			HpDisp(GameStats.Hp,new Vector3(graphics.Screen.Width/2,40,0),600,30,0);
+			
 			selectedWeapon.Update(pos);
 			
 			sprite.Position = pos;
@@ -161,7 +184,7 @@ namespace Project1
 			
 			sprite.Render();
 			selectedWeapon.Render();
-			
+			base.Render();
 		}
 		
 	}

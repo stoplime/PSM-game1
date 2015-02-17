@@ -1,3 +1,4 @@
+//******************************** Steffen Lim *******************************
 using System;
 using System.Collections.Generic;
 
@@ -21,16 +22,17 @@ namespace Project1
 		public static List<Texture2D> WeaponTexs = new List<Texture2D>();
 		public static List<Texture2D> BulletTexs = new List<Texture2D>();
 		
-		public static int Hp = 10;
+		public static Texture2D pixel;
+		
 		public static MoveDir Direction = MoveDir.Right;
 		
-		
+		public const int Hp = 1000;
 		public const float MIN_SPD = 1.5f;
 		public const float MAX_SPD = 3f;
 		public const float BULLET_SPD = 5f;
 		public const float FLAME_SPD = 3.5f;
 		public const int RELOAD_SPD = 30;
-		public const int SPAWN_SPD = 600;
+		public const int SPAWN_SPD = 600;	//600
 		
 		public static Vector2 SwordCenter = new Vector2(-0.12f,0.32f);
 		public static Vector2 pistolCenter = new Vector2(0.23f,0.35f);
